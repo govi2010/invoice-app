@@ -14,8 +14,10 @@
   <%= webpackConfig.htmlElements.headTags %>
   <% } %>
 
+  <% if (htmlWebpackPlugin.options.metadata.baseUrl) { %>
   <!-- base url -->
   <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+  <% } %>
 
 
 </head>

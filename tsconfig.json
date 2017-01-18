@@ -10,6 +10,7 @@
     "noEmit": true,
     "noEmitHelpers": true,
     "strictNullChecks": false,
+    "isolatedModules": false,
     "lib": [
       "dom",
       "es6"
@@ -18,11 +19,12 @@
       "node_modules/@types"
     ],
     "types": [
+      "electron",
       "hammerjs",
-      "jasmine",
       "node",
       "source-map",
       "uglify-js",
+      "webdriverio",
       "webpack"
     ]
   },

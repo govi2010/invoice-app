@@ -10,6 +10,7 @@
     "noEmit": true,
     "noEmitHelpers": true,
     "strictNullChecks": false,
+    "isolatedModules": false,
     "lib": [
       "es2015",
       "dom"
@@ -19,6 +20,7 @@
     ],
     "types": [
       "hammerjs",
+      "electron",
       "node"
     ]
   },

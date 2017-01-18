@@ -57,6 +57,7 @@ npm-debug.log
 *.temp.json
 /compiled/
 dll/
+dev/
 
 # Doc #
 /doc/

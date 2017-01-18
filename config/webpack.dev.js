@@ -3,6 +3,7 @@
  */
 
 const helpers = require('./helpers');
+const webpack = require('webpack');
 const webpackMerge = require('webpack-merge'); // used to merge webpack configs
 const webpackMergeDll = webpackMerge.strategy({plugins: 'replace'});
 const commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
@@ -21,13 +22,6 @@ const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3000;
-const HMR = helpers.hasProcessFlag('hot');
-const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
-  host: HOST,
-  port: PORT,
-  ENV: ENV,
-  HMR: HMR
-});
 
 
 const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
@@ -38,6 +32,16 @@ const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
 module.exports = function (options) {
+
+  const HMR = helpers.hasProcessFlag('hot') || (options && options.HMR) || false;
+  if(HMR) console.log('\n\nHMR BABY!!!\n\n')
+  const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
+    host: HOST,
+    port: PORT,
+    ENV: ENV,
+    HMR: HMR
+  });
+
   return webpackMerge(commonConfig({env: ENV}), {
 
     /**
@@ -207,6 +211,16 @@ module.exports = function (options) {
         }
       }),
 
+      /*
+       * Plugin: OccurrenceOrderPlugin
+       * Description: Webpack gives your modules and chunks ids to identify them. This plugin 
+       * varies the distribution of the ids to get the smallest id length for often used ids.
+       * Also ensures consistent build hashes for HMR.
+       *
+       * See: https://github.com/webpack/docs/wiki/optimization
+       */
+      new webpack.optimize.OccurrenceOrderPlugin(),
+
     ],
 
     /**
@@ -233,14 +247,14 @@ module.exports = function (options) {
      *
      * See: https://webpack.github.io/docs/configuration.html#node
      */
-    node: {
+    /* node: {
       global: true,
       crypto: 'empty',
       process: true,
       module: false,
       clearImmediate: false,
       setImmediate: false
-    }
+    } */
 
   });
 }

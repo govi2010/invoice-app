@@ -95,6 +95,7 @@ module.exports = function (options) {
             {
               loader: 'awesome-typescript-loader',
               query: {
+                configFileName: 'tsconfig.karma.json',
                 // use inline sourcemaps for "karma-remap-coverage" reporter
                 sourceMap: false,
                 inlineSourceMap: true,

@@ -28,7 +28,7 @@ const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
   title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
-  baseUrl: '/',
+  baseUrl: '',
   isDevServer: helpers.isWebpackDevServer()
 };
 
@@ -316,28 +316,6 @@ module.exports = function (options) {
        */
       new LoaderOptionsPlugin({}),
 
-      // Fix Angular 2
-      new NormalModuleReplacementPlugin(
-        /facade(\\|\/)async/,
-        helpers.root('node_modules/@angular/core/src/facade/async.js')
-      ),
-      new NormalModuleReplacementPlugin(
-        /facade(\\|\/)collection/,
-        helpers.root('node_modules/@angular/core/src/facade/collection.js')
-      ),
-      new NormalModuleReplacementPlugin(
-        /facade(\\|\/)errors/,
-        helpers.root('node_modules/@angular/core/src/facade/errors.js')
-      ),
-      new NormalModuleReplacementPlugin(
-        /facade(\\|\/)lang/,
-        helpers.root('node_modules/@angular/core/src/facade/lang.js')
-      ),
-      new NormalModuleReplacementPlugin(
-        /facade(\\|\/)math/,
-        helpers.root('node_modules/@angular/core/src/facade/math.js')
-      ),
-
       new ngcWebpack.NgcWebpackPlugin({
         disabled: !AOT,
         tsConfig: helpers.root(customTsConfigFileName),
@@ -359,20 +337,7 @@ module.exports = function (options) {
 
     ],
 
-    /*
-     * Include polyfills or mocks for various node stuff
-     * Description: Node configuration
-     *
-     * See: https://webpack.github.io/docs/configuration.html#node
-     */
-    node: {
-      global: true,
-      crypto: 'empty',
-      process: true,
-      module: false,
-      clearImmediate: false,
-      setImmediate: false
-    }
+    target: 'electron-renderer'
 
   };
 }

@@ -1,22 +1,32 @@
-import { browser, by, element } from 'protractor';
+import { launchApp, awaitReady, stopApp } from '../../../config/e2e-common';
+import { expect } from 'chai';
 
-describe('App', () => {
+describe('Home', function() {
+
+  let app: any;
+  let browser: WebdriverIO.Client<void>;
 
   beforeEach(() => {
-    // change hash depending on router LocationStrategy
-    browser.get('/#/home');
+    app = launchApp();
+    return awaitReady(app).then(() => {
+      browser = app.client;
+    });
+  });
+
+  afterEach(() => {
+    return stopApp(app);
   });
 
   it('should have a title', () => {
     let subject = browser.getTitle();
     let result  = 'Angular2 Webpack Starter by @gdi2290 from @AngularClass';
-    expect(subject).toEqual(result);
+    return expect(subject).to.eventually.equal(result);
   });
 
   it('should have `your content here` x-large', () => {
-    let subject = element(by.css('[x-large]')).getText();
+    let subject = browser.getText('[x-large]');
     let result  = 'Your Content Here';
-    expect(subject).toEqual(result);
+    return expect(subject).to.eventually.equal(result);
   });
 
 });
