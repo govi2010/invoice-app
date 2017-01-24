@@ -1,15 +1,3 @@
-<p align="center">
-  <a href="http://courses.angularclass.com/courses/angular-2-fundamentals?utm_source=github-angular2-webpack-starter&utm_medium=open-source&utm_campaign=webpackstarter" target="_blank">
-    <img width="438" alt="Angular 2 Fundamentals" src="https://cloud.githubusercontent.com/assets/1016365/17200649/085798c6-543c-11e6-8ad0-2484f0641624.png">
-  </a>
-</p>
-
-___
-
-
-
-[![taylor swift](https://img.shields.io/badge/secured%20by-taylor%20swift-brightgreen.svg)](https://twitter.com/SwiftOnSecurity)
-[![volkswagen status](https://auchenberg.github.io/volkswagen/volkswargen_ci.svg?v=1)](https://github.com/auchenberg/volkswagen)
 [![Build Status](https://travis-ci.org/AngularClass/angular2-webpack-starter.svg?branch=master)](https://travis-ci.org/AngularClass/angular2-webpack-starter)
 [![GitHub version](https://badge.fury.io/gh/angularclass%2Fangular2-webpack-starter.svg)](https://badge.fury.io/gh/angularclass%2Fangular2-webpack-starter)
 [![Dependency Status](https://david-dm.org/angularclass/angular2-webpack-starter.svg)](https://david-dm.org/angularclass/angular2-webpack-starter)
@@ -21,68 +9,62 @@ ___
   </a>
 </p>
 
-# Angular2 Webpack Starter [![Join Slack](https://img.shields.io/badge/slack-join-brightgreen.svg)](https://angularclass.com/slack-join) [![Join the chat at https://gitter.im/angularclass/angular2-webpack-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angularclass/angular2-webpack-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Angular Electron Dream Starter with Webpack 2
 
+> A starter kit for [Electron](https://electron.atom.io) and [Angular 2](https://angular.io) featuring [Webpack 2](https://webpack.js.org), [AoT](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) compile, Electron unit tests, native E2E tests in [Spectron](http://electron.atom.io/spectron/), and a powerful development workflow with [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) and [Electron Connect](https://github.com/Quramy/electron-connect).
 
-> An Angular 2 starter kit featuring [Angular 2](https://angular.io) and [Angular 4](https://github.com/angular/angular/tree/4.0.0-beta.0) ([Ahead of Time Compile](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html), [Router](https://angular.io/docs/ts/latest/guide/router.html), [Forms](https://angular.io/docs/ts/latest/guide/forms.html),
-[Http](https://angular.io/docs/ts/latest/guide/server-communication.html),
-[Services](https://gist.github.com/gdi2290/634101fec1671ee12b3e#_follow_@AngularClass_on_twitter),
-[Tests](https://angular.io/docs/ts/latest/guide/testing.html), [E2E](https://angular.github.io/protractor/#/faq#what-s-the-difference-between-karma-and-protractor-when-do-i-use-which-)), [Karma](https://karma-runner.github.io/), [Protractor](https://angular.github.io/protractor/), [Jasmine](https://github.com/jasmine/jasmine), [Istanbul](https://github.com/gotwarlost/istanbul), [TypeScript](http://www.typescriptlang.org/), [@types](https://www.npmjs.com/~types), [TsLint](http://palantir.github.io/tslint/), [Codelyzer](https://github.com/mgechev/codelyzer), [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html), and [Webpack 2](http://webpack.github.io/) by [AngularClass](https://angularclass.com).
+Forked from [AngularClass/angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter).
 
-> If you're looking for Angular 1.x please use [NG6-starter](https://github.com/angularclass/NG6-starter)
-> If you're looking to learn about Webpack and ES6 Build Tools check out [ES6-build-tools](https://github.com/AngularClass/ES6-build-tools)
-> If you're looking to learn TypeScript see [TypeStrong/learn-typescript](https://github.com/TypeStrong/learn-typescript)
-> If you're looking for something easier to get started with then see the angular2-seed that I also maintain [angular/angular2-seed](https://github.com/AngularClass/angular2-seed)
+I designed this seed repo to demonstrate an ideal development workflow and the most powerful tools for developing desktop applicaitons using Angular and Electron. `npm start` launches a powerful development workflow which uses Hot Module Replacement (HMR) for nearly instant updates inside the browser window, while also restarting your app automatically every time you update the code of the main process.
 
-This seed repo serves as an Angular 2 starter for anyone looking to get up and running with Angular 2 and TypeScript fast. Using a [Webpack 2](http://webpack.github.io/) for building our files and assisting with boilerplate. We're also using Protractor for our end-to-end story and Karma for our unit tests.
-* Best practices in file and application organization for Angular 2.
-* Ready to go build system using Webpack for working with TypeScript.
-* Angular 2 examples that are ready to go when experimenting with Angular 2.
-* A great Angular 2 seed repo for anyone who wants to start their project.
+* Best practices in desktop applicaiton development with Angular 2 and Electron.
+* Ready to go build system using Webpack 2 for working with TypeScript.
+* Automated bundling of app dependencies, including rebuilding native modules
+* Easily package your app for release on Mac, Linux or Windows and create installers
 * Ahead of Time (AoT) compile for rapid page loads of your production builds.
 * Tree shaking to automatically remove unused code from your production bundle.
 * [Webpack DLLs](https://robertknight.github.io/posts/webpack-dll-plugins/) dramatically speed your development builds.
-* Testing Angular 2 code with Jasmine and Karma.
+* Testing Angular 2 code inside Electron with Jasmine and Karma.
 * Coverage with Istanbul and Karma
-* End-to-end Angular 2 code using Protractor.
+* End-to-end application testing with Spectron (using Mocha and Chai).
 * Type manager with @types
 * Hot Module Replacement with Webpack and [@angularclass/hmr](https://github.com/angularclass/angular2-hmr) and [@angularclass/hmr-loader](https://github.com/angularclass/angular2-hmr-loader)
-* Material Design with [angular/material2](https://github.com/angular/material2)
 * Angular 4 support via changing package.json and any future Angular versions
 
 ### Quick start
-**Make sure you have Node version >= 5.0 and NPM >= 3**
+**Make sure you have Node version >= 6.0 and NPM >= 3**
 > Clone/Download the repo then edit `app.component.ts` inside [`/src/app/app.component.ts`](/src/app/app.component.ts)
 
 ```bash
 # clone our repo
 # --depth 1 removes all but one .git commit history
-git clone --depth 1 https://github.com/angularclass/angular2-webpack-starter.git
+git clone --depth 1 https://github.com/colinskow/angular-electron-dream-starter.git
 
 # change directory to our repo
-cd angular2-webpack-starter
+cd angular-electron-dream-starter
 
 # install the repo with npm
 npm install
 
-# start the server
+# launch the development build
 npm start
-
-# use Hot Module Replacement
-npm run server:dev:hmr
 
 # if you're in China use cnpm
 # https://github.com/cnpm/cnpm
 ```
-go to [http://0.0.0.0:3000](http://0.0.0.0:3000) or [http://localhost:3000](http://localhost:3000) in your browser
+Electron will automatically launch and update itself when your source code changes.
 
 # Table of Contents
 * [File Structure](#file-structure)
 * [Getting Started](#getting-started)
     * [Dependencies](#dependencies)
     * [Installing](#installing)
-    * [Running the app](#running-the-app)
+    * [Building](#building)
+    * [Launching Your Build](#launching-your-build)
+    * [Generating Release Packages](#generating-release-packages)
+    * [Other Commands](#other-commands)
 * [Configuration](#configuration)
+* [Managing Dependencies](#managing-dependencies)
 * [AoT Don'ts](#aot-donts)
 * [External Stylesheets](#external-stylesheets)
 * [Lazy Loading](#lazy-loading)
@@ -102,13 +84,19 @@ angular2-webpack-starter/
  |   ├──helpers.js                 * helper functions for our configuration files
  |   ├──spec-bundle.js             * ignore this magic that sets up our angular 2 testing environment
  |   ├──karma.conf.js              * karma config for our unit tests
- |   ├──protractor.conf.js         * protractor config for our end-to-end tests
+ |   ├──webpack.electron.js        * webpack config for our Electron main process
  │   ├──webpack.dev.js             * our development webpack config
  │   ├──webpack.prod.js            * our production webpack config
- │   └──webpack.test.js            * our testing webpack config
+ │   ├──webpack.test.js            * our testing webpack config
+ │   └──server.js                  * our development server for the Electron renderer
+ │
+ ├──electron/                      * source files for the main Electron process
+ │   └──main.electron.ts           * our entry file for Electron
  │
  ├──src/                           * our source files that will be compiled to javascript
  |   ├──main.browser.ts            * our entry file for our browser environment
+ │   │
+ │   ├──main.electron.ts           * our entry file for Electron
  │   │
  |   ├──index.html                 * Index.html: where we generate our index page
  │   │
@@ -136,42 +124,28 @@ angular2-webpack-starter/
 ```
 
 # Getting Started
+
 ## Dependencies
 What you need to run this app:
 * `node` and `npm` (`brew install node`)
-* Ensure you're running the latest versions Node `v4.x.x`+ (or `v5.x.x`) and NPM `3.x.x`+
+* Ensure you're running the latest versions Node `v6.x.x`+ (or `v7.x.x`) and NPM `3.x.x`+
 
 > If you have `nvm` installed, which is highly recommended (`brew install nvm`) you can do a `nvm install --lts && nvm use` in `$` to run with the latest Node LTS. You can also have this `zsh` done for you [automatically](https://github.com/creationix/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file) 
 
 Once you have those, you should install these globals with `npm install --global`:
+* `electron` (`npm install --global electron`)
 * `webpack` (`npm install --global webpack`)
-* `webpack-dev-server` (`npm install --global webpack-dev-server`)
 * `karma` (`npm install --global karma-cli`)
-* `protractor` (`npm install --global protractor`)
 * `typescript` (`npm install --global typescript`)
 
 ## Installing
 * `fork` this repo
 * `clone` your fork
-* `npm install webpack-dev-server rimraf webpack -g` to install required global dependencies
 * `npm install` to install all dependencies or `yarn`
-* `npm run server` to start the dev server in another tab
+* `npm start` to start the development workflow
 
-## Running the app
-After you have installed all dependencies you can now run the app. Run `npm run server` to start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://0.0.0.0:3000` (or if you prefer IPv6, if you're using `express` server, then it's `http://[::1]:3000/`).
+## Building
 
-### server
-```bash
-# development
-npm run server
-# production
-npm run build:prod
-npm run server:prod
-```
-
-## Other commands
-
-### build files
 ```bash
 # development
 npm run build:dev
@@ -181,15 +155,28 @@ npm run build:prod
 npm run build:aot
 ```
 
-### hot module replacement
+## Launching Your Build
+
 ```bash
-npm run server:dev:hmr
+npm run launch
 ```
 
-### watch and build files
+## Generating Release Packages
+
+Make sure to build your app first. Application packages files will be generated inside the `/packages` directory.
+
 ```bash
-npm run watch
+# all platforms
+npm run package
+# Linux
+npm run package:linux
+# Mac
+npm run package:mac
+# Windows
+npm run package:windows
 ```
+
+## Other Commands
 
 ### run unit tests
 ```bash
@@ -203,8 +190,6 @@ npm run watch:test
 
 ### run end-to-end tests
 ```bash
-# update Webdriver (optional, done automatically by postinstall script)
-npm run webdriver:update
 # this will start a test server and launch Protractor
 npm run e2e
 ```
@@ -215,18 +200,30 @@ npm run e2e
 npm run ci
 ```
 
-### run Protractor's elementExplorer (for end-to-end)
+### run Webdriver.io's live debug (for end-to-end)
+This allows you to debug e2e tests and explore your app while it is running. See the [WebDriver.io documentation](http://webdriver.io/api/utility/debug.html) for details.
+
 ```bash
 npm run e2e:live
 ```
 
-### build Docker
-```bash
-npm run build:docker
-```
-
 # Configuration
-Configuration files live in `config/` we are currently using webpack, karma, and protractor for different stages of your application
+Configuration files live in `config/`. You can modify the settings for Webpack and Karma here.
+
+The configuration for your Electron build lives inside `package.json` under `build`. You can read the docs [here](https://github.com/electron-userland/electron-builder).
+
+# Managing Dependencies
+
+Each package listed in `package.json` under `dependencies` will automatically be packaged with your app and rebuilt for Electron if it contains native bindings. Only list packages here that are necessary for your app's runtime. Angular, CoreJS and related packages are compiled by Webpack and therefore not necessary at runtime. These and anything else not needed to run your app should go under `devDependencies`.
+
+Any time you run `npm install` or `yarn install`, your app dependencies will automatically be built and packaged for your current operating system and architecture. After you run `npm update` or `yarn upgrade`, you will need to manually update app's dependencies are up-to-date as well:
+
+```bash
+# if you use yarn
+yarn run install-app-deps
+# otherwise
+npm run install-app-deps
+```
 
 # AoT Don'ts
 The following are some things that will make AoT compile fail.
@@ -276,7 +273,7 @@ npm install --global typescript
 We have good experience using these editors:
 
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Webstorm 10](https://www.jetbrains.com/webstorm/download/)
+* [Webstorm](https://www.jetbrains.com/webstorm/download/)
 * [Atom](https://atom.io/) with [TypeScript plugin](https://atom.io/packages/atom-typescript)
 * [Sublime Text](http://www.sublimetext.com/3) with [Typescript-Sublime-Plugin](https://github.com/Microsoft/Typescript-Sublime-plugin#installation)
 
@@ -334,83 +331,12 @@ import * as _ from 'lodash';
 
 
 # Frequently asked questions
-* What's the current browser support for Angular 2 Beta?
-  * Please view the updated list of [browser support for Angular 2](https://github.com/angularclass/awesome-angular2#current-browser-support-for-angular-2)
-* Why is my service, aka provider, is not injecting parameter correctly?
-  * Please use `@Injectable()` for your service for typescript to correctly attach the metadata (this is a TypeScript problem)
-* How do I run protractor with node 0.12.x?
-  * please check out this repo to use the old version of protractor [#146](https://github.com/AngularClass/angular2-webpack-starter/pull/146/files)
-* Where do I write my tests?
-  * You can write your tests next to your component files. See [`/src/app/home/home.component.spec.ts`](/src/app/home/home.component.spec.ts)
-* How do I start the app when I get `EACCES` and `EADDRINUSE` errors?
-  * The `EADDRINUSE` error means the port `3000` is currently being used and `EACCES` is lack of permission for webpack to build files to `./dist/`
-* How to use `sass` for css?
- * `loaders: ['raw-loader','sass-loader']` and `@Component({ styleUrls: ['./filename.scss'] })` see issue [#136](https://github.com/AngularClass/angular2-webpack-starter/issues/136)
-* How do I test a Service?
- * See issue [#130](https://github.com/AngularClass/angular2-webpack-starter/issues/130#issuecomment-158872648)
-* How do I add `vscode-chrome-debug` support?
- * The VS Code chrome debug extension support can be done via `launch.json` see issue [#144](https://github.com/AngularClass/angular2-webpack-starter/issues/144#issuecomment-164063790)
-* How do I make the repo work in a virtual machine?
- * You need to use `0.0.0.0` so revert these changes [#205](https://github.com/AngularClass/angular2-webpack-starter/pull/205/files)
-* What are the naming conventions for Angular 2?
- * please see issue [#185](https://github.com/AngularClass/angular2-webpack-starter/issues/185) and PR [196](https://github.com/AngularClass/angular2-webpack-starter/pull/196)
-* How do I include bootstrap or jQuery?
- * please see issue [#215](https://github.com/AngularClass/angular2-webpack-starter/issues/215) and [#214](https://github.com/AngularClass/angular2-webpack-starter/issues/214#event-511768416)
-* How do I async load a component?
- * see wiki [How-do-I-async-load-a-component-with-AsyncRoute](https://github.com/AngularClass/angular2-webpack-starter/wiki/How-do-I-async-load-a-component-with-AsyncRoute)
-* Error: Cannot find module 'tapable'
- * Remove `node_modules/` and run `npm cache clean` then `npm install`
-* What about Webpack 2?
- * If you're looking for Webpack 2 version then see the [experimental version](https://github.com/gdi2290/angular2-webpack2-starter) that will be merged soon.
-* How do I turn on Hot Module Replacement
- * Run `npm run server:dev:hmr`
-* `RangeError: Maximum call stack size exceeded`
- * This is a problem with minifying Angular 2 and it's recent JIT templates. If you set `mangle` to `false` then you should be good.
-* Why is the size of my app larger in development?
- * We are using inline source-maps and hot module replacement which will increase the bundle size.
-* If you're in China
- * check out https://github.com/cnpm/cnpm
-* If you're looking to add Angular 2 Material Design
- * check out the [material2](https://github.com/AngularClass/angular2-webpack-starter/tree/material2) branch
-* node-pre-gyp ERR in npm install (Windows)
- * install Python x86 version between 2.5 and 3.0 on windows see issue [#626](https://github.com/AngularClass/angular2-webpack-starter/issues/626)
-* `Error:Error: Parse tsconfig error [{"messageText":"Unknown compiler option 'lib'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'strictNullChecks'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'baseUrl'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'paths'.","category":1,"code":5023},{"messageText":"Unknown compiler option 'types'.","category":1,"code":5023}]`
- * remove `node_modules/typescript` and run `npm install typescript@beta`. This repo now uses ts 2.0 
-* "There are multiple modules with names that only differ in casing"
- * change `c:\[path to angular2-webpack-starter]` to `C:\[path to angular2-webpack-starter]` see [926#issuecomment-245223547](https://github.com/AngularClass/angular2-webpack-starter/issues/926#issuecomment-245223547)
 
-# Support, Questions, or Feedback
-> Contact us anytime for anything about this repo or Angular 2
-
-* [Chat: AngularClass.slack](http://angularclass.com/member-join/)
-* [Twitter: @AngularClass](https://twitter.com/AngularClass)
-* [Gitter: AngularClass/angular2-webpack-starter](https://gitter.im/angularclass/angular2-webpack-starter)
-
-# Deployment
-
-## Netlify
-
-You can quickly create a free site to get started using this
-starter kit in production on [Netlify](https://www.netlify.com/):
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/AngularClass/angular2-webpack-starter)
-
-<p align="center">
-  <a href="http://courses.angularclass.com/courses/angular-2-fundamentals" target="_blank">
-    <img width="438" alt="Angular 2 Fundamentals" src="https://cloud.githubusercontent.com/assets/1016365/17200649/085798c6-543c-11e6-8ad0-2484f0641624.png">
-  </a>
-</p>
+> See the [FAQ](https://github.com/AngularClass/angular2-webpack-starter#frequently-asked-questions) at `AngularClass/angular2-webpack-starter`.
 
 ___
 
-enjoy — **AngularClass**
-
-<br><br>
-
-[![AngularClass](https://cloud.githubusercontent.com/assets/1016365/9863770/cb0620fc-5af7-11e5-89df-d4b0b2cdfc43.png  "Angular Class")](https://angularclass.com)
-##[AngularClass](https://angularclass.com)
-> Learn AngularJS, Angular 2, and Modern Web Development from the best.
-> Looking for corporate Angular training, want to host us, or Angular consulting? patrick@angularclass.com
+enjoy — **[Colin Skow](https://github.com/colinskow) & [AngularClass](https://github.com/AngularClass)**
 
 ___
 

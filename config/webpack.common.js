@@ -14,6 +14,7 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+const dependencyExternals = require('./dependency-externals');
 const HtmlElementsPlugin = require('./html-elements-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
@@ -183,6 +184,13 @@ module.exports = function (options) {
       ],
 
     },
+
+    /*
+     * Exclude package.json dependencies from the bundle
+     *
+     * See: https://webpack.js.org/configuration/externals/
+     */
+    externals: [dependencyExternals()],
 
     /*
      * Add additional plugins to the compiler.

@@ -30,7 +30,7 @@ module.exports = function(options) {
   };
 
   const entry = {
-    'index': './electron/main.electron.ts',
+    'index': './src/main.electron.ts'
   };
 
   const otherFilesToCompile = [];
