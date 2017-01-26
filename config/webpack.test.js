@@ -13,7 +13,6 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 const dependencyExternals = require('./dependency-externals');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 /**
  * Webpack Constants
@@ -228,7 +227,6 @@ module.exports = function (options) {
           // legacy options go here
         }
       }),
-      // new BundleAnalyzerPlugin()
 
     ],
 
