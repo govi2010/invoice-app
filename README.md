@@ -1,8 +1,6 @@
 [![Build Status](https://travis-ci.org/colinskow/angular-electron-dream-starter.svg?branch=master)](https://travis-ci.org/colinskow/angular-electron-dream-starter)
 [![GitHub version](https://badge.fury.io/gh/colinskow%2Fangular-electron-dream-starter.svg)](https://badge.fury.io/gh/colinskow%2Fangular-electron-dream-starter)
-[![Dependency Status](https://david-dm.orgcolinskow/angular-electron-dream-starter.svg)](https://david-dm.org/colinskow/angular-electron-dream-starter)
-[![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/colinskow/angular-electron-dream-starter)
-
+[![Dependency Status](https://david-dm.org/colinskow/angular-electron-dream-starter.svg)](https://david-dm.org/colinskow/angular-electron-dream-starter)
 <p align="center">
   <img src="https://rawgit.com/colinskow/angular2-webpack-starter/electron/src/assets/img/angular-electron.svg" alt="Angular Electron Dream Starter" width="300" height="300"/>
 </p>
@@ -87,9 +85,6 @@ angular2-webpack-starter/
  │   ├──webpack.prod.js            * our production webpack config
  │   ├──webpack.test.js            * our testing webpack config
  │   └──electron-dev.js            * our development server for the Electron renderer
- │
- ├──electron/                      * source files for the main Electron process
- │   └──main.electron.ts           * our entry file for Electron
  │
  ├──src/                           * our source files that will be compiled to javascript
  |   ├──main.browser.ts            * our entry file for our browser environment
@@ -249,7 +244,7 @@ For example to use Bootstrap as an external stylesheet:
 4) In `src/app/app.module.ts` add underneath the other import statements: `import '../styles/styles.scss';`
 
 # Lazy Loading
-When you lazy load a module in your router config, it will go into a separate chunk and the browser won't download the code until the user attempts to navigate to the route.
+When you lazy load a module in your router config, it will go into a separate chunk and the browser will download the code after your main application is finished loading. This results in faster start-up time.
 
 You can make a module lazy load by using the `loadChildren` syntax in your route definitions:
 
