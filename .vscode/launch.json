@@ -2,7 +2,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Electron debugging with sourcemaps",
+            "name": "Debug Main Process",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}/dist",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            // Use the following for Windows
+            // "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            "program": "${workspaceRoot}/dist/index.js"
+        },
+        {
+            "name": "Debug Renderer Process",
             "type": "chrome",
             "request": "launch",
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
@@ -12,16 +22,7 @@
               "--remote-debugging-port=9222"
             ],
             "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
-        },
-        {
-            "name": "Attach to Chrome, with sourcemaps",
-            "type": "chrome",
-            "request": "attach",
-            "url": "http://localhost:3000/*",
-            "port": 9222,
-            "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceRoot}/dist"
         }
     ]
 }

@@ -8,16 +8,22 @@ const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 const spawn = require('child_process').spawn;
+const helpers = require('./helpers');
 
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3000;
 
 const config = require('./webpack.dev')({ HMR: true });
 config.entry.hmr = `webpack-hot-middleware/client?path=http://${HOST}:${PORT}/__webpack_hmr`;
+config.devServer = config.devServer || {};
+config.devServer.outputPath = config.output.path = helpers.root('dev');
+
 config.plugins.push(
   new webpack.NoEmitOnErrorsPlugin(),
-  new webpack.HotModuleReplacementPlugin()
+  new webpack.HotModuleReplacementPlugin(),
+  new WriteFilePlugin({log: false})
 );
 
 const app = express();

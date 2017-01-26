@@ -1,3 +1,4 @@
+/// <reference types="jasmine" />
 import { ActivatedRoute, Data } from '@angular/router';
 import { Component } from '@angular/core';
 import { inject, TestBed } from '@angular/core/testing';

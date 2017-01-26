@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain, dialog } from 'electron';
 import path from 'path';
 import url from 'url';
 
@@ -6,14 +6,7 @@ declare const DEV_SERVER: boolean;
 declare const host: string;
 declare const port: number;
 
-const indexUrl = DEV_SERVER ?
-  url.format({
-    protocol: 'http:',
-    hostname: host,
-    port: '' + port,
-    pathname: 'index.html'
-  }) :
-  url.format({
+const indexUrl = url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
     slashes: true
@@ -68,3 +61,13 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+ipcMain.on('show-dialog', (event, arg) => {
+  dialog.showMessageBox(win, {
+    type: 'info',
+    buttons: ['OK'],
+    title: 'Native Dialog',
+    message: 'I\'m a native dialog!',
+    detail: 'It\'s my pleasure to make your life better.'
+  });
+});

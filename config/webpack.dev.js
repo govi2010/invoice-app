@@ -34,7 +34,7 @@ const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
 module.exports = function (options) {
 
   const HMR = helpers.hasProcessFlag('hot') || (options && options.HMR) || false;
-  if(HMR) console.log('\n\nHMR BABY!!!\n\n')
+
   const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
     host: HOST,
     port: PORT,
@@ -167,8 +167,7 @@ module.exports = function (options) {
             '@angular/forms',
             '@angular/http',
             '@angular/router',
-            '@angularclass/hmr',
-            'rxjs',
+            '@angularclass/hmr'
           ]
         },
         dllDir: helpers.root('dll'),

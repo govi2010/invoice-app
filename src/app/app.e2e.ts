@@ -37,8 +37,8 @@ describe('App', function() {
 
   it('should have buttons', () => {
     let subject: any = browser.getText('button');
-    let result  = 'Submit Value';
-    return expect(subject).to.eventually.equal(result);
+    let result  = ['Show Dialog', 'Submit Value'];
+    return expect(subject).to.eventually.deep.equal(result);
   });
 
 });

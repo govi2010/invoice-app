@@ -12,6 +12,8 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
+const dependencyExternals = require('./dependency-externals');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 /**
  * Webpack Constants
@@ -51,7 +53,11 @@ module.exports = function (options) {
       /**
        * Make sure root is src
        */
-      modules: [path.resolve(__dirname, 'src'), 'node_modules']
+      /* modules: [
+        helpers.root('src'), 
+        // helpers.root('node_modules_electron','node_modules'),
+        helpers.root('node_modules')
+      ] */
 
     },
 
@@ -222,6 +228,7 @@ module.exports = function (options) {
           // legacy options go here
         }
       }),
+      // new BundleAnalyzerPlugin()
 
     ],
 
@@ -234,20 +241,24 @@ module.exports = function (options) {
       hints: false
     },
 
+    externals: dependencyExternals(/*{additional: ['electron']} */),
+
+    target: 'electron-renderer',
+
     /**
      * Include polyfills or mocks for various node stuff
      * Description: Node configuration
      *
      * See: https://webpack.github.io/docs/configuration.html#node
      */
-    node: {
+    /* node: {
       global: true,
       process: false,
       crypto: 'empty',
       module: false,
       clearImmediate: false,
       setImmediate: false
-    }
+    } */
 
   };
 }

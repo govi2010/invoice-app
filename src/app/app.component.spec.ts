@@ -1,3 +1,4 @@
+/// <reference types="jasmine" />
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import {
   inject,
@@ -5,10 +6,12 @@ import {
   TestBed,
   ComponentFixture
 } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 // Load the implementations that should be tested
 import { AppComponent } from './app.component';
-import { AppState } from './app.service';
+import { rootReducer } from './reducers';
+import { HomeActions } from './home/home.actions';
 
 describe(`App`, () => {
   let comp: AppComponent;
@@ -18,8 +21,9 @@ describe(`App`, () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AppComponent ],
+      imports: [ StoreModule.provideStore(rootReducer) ],
       schemas: [NO_ERRORS_SCHEMA],
-      providers: [AppState]
+      providers: [HomeActions]
     })
     .compileComponents(); // compile template and css
   }));
@@ -39,7 +43,7 @@ describe(`App`, () => {
 
   it(`should be @AngularClass`, () => {
     expect(comp.url).toEqual('https://twitter.com/AngularClass');
-    expect(comp.angularclassLogo).toEqual('assets/img/angularclass-avatar.png');
+    expect(comp.angularclassLogo).toEqual('assets/img/angular-electron.svg');
     expect(comp.name).toEqual('Angular 2 Webpack Starter');
   });
 

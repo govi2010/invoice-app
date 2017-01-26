@@ -1,3 +1,4 @@
+/// <reference types="jasmine" />
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import {
   inject,
@@ -12,9 +13,11 @@ import {
   Http
 } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
+import { StoreModule } from '@ngrx/store';
 
 // Load the implementations that should be tested
-import { AppState } from '../app.service';
+import { rootReducer } from '../reducers';
+import { HomeActions } from './home.actions';
 import { HomeComponent } from './home.component';
 import { Title } from './title';
 
@@ -26,6 +29,7 @@ describe(`Home`, () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HomeComponent],
+      imports: [StoreModule.provideStore(rootReducer)],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
         BaseRequestOptions,
@@ -37,7 +41,7 @@ describe(`Home`, () => {
           },
           deps: [MockBackend, BaseRequestOptions]
         },
-        AppState,
+        HomeActions,
         Title,
       ]
     })

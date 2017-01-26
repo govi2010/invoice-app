@@ -31,6 +31,7 @@
     "use-output-property-decorator": true,
     "use-pipe-transform-interface": true,
     // General
+    "arrow-parens": false,
     "no-console": [true,
       "time",
       "timeEnd",

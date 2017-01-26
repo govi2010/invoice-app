@@ -11,7 +11,7 @@
 
 # Angular Electron Dream Starter with Webpack 2
 
-> A starter kit for [Electron](https://electron.atom.io) and [Angular 2](https://angular.io) featuring [Webpack 2](https://webpack.js.org), [AoT](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) compile, Electron unit tests, native E2E tests in [Spectron](http://electron.atom.io/spectron/), and a powerful development workflow with [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) and [Electron Connect](https://github.com/Quramy/electron-connect).
+> A starter kit for [Electron](https://electron.atom.io) and [Angular 2](https://angular.io) featuring [Webpack 2](https://webpack.js.org), [AoT](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) compile, [NGRX Store](https://github.com/ngrx/store), Electron unit tests, native E2E tests in [Spectron](http://electron.atom.io/spectron/), and a powerful development workflow with [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) and [Electron Connect](https://github.com/Quramy/electron-connect).
 
 Forked from [AngularClass/angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter).
 
@@ -88,7 +88,7 @@ angular2-webpack-starter/
  │   ├──webpack.dev.js             * our development webpack config
  │   ├──webpack.prod.js            * our production webpack config
  │   ├──webpack.test.js            * our testing webpack config
- │   └──server.js                  * our development server for the Electron renderer
+ │   └──electron-dev.js            * our development server for the Electron renderer
  │
  ├──electron/                      * source files for the main Electron process
  │   └──main.electron.ts           * our entry file for Electron
@@ -106,6 +106,11 @@ angular2-webpack-starter/
  │   │   ├──app.component.spec.ts  * a simple test of components in app.component.ts
  │   │   ├──app.e2e.ts             * a simple end-to-end test for /
  │   │   └──app.component.ts       * a simple version of our App component components
+ │   │
+ │   ├──resources/                 * icons and resources for Electron Builder
+ │   │   ├──icon.icns              * Mac / Linux icon
+ │   │   ├──icon.ico               * Windows icon
+ │   │   └──background.png         * background icon for Mac DMG installer
  │   │
  │   └──assets/                    * static assets are served here
  │       ├──icon/                  * our list of icons from www.favicon-generator.org

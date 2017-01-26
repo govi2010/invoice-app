@@ -21,7 +21,8 @@ module.exports = function (config) {
     exclude: [],
 
     client: {
-      captureConsole: false
+      captureConsole: false,
+      useIframe: false
     },
 
     /*
@@ -45,7 +46,7 @@ module.exports = function (config) {
      * preprocess matching files before serving them to the browser
      * available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
      */
-    preprocessors: { './config/spec-bundle.js': ['coverage', 'webpack', 'sourcemap'] },
+    preprocessors: { './config/spec-bundle.js': ['coverage', 'webpack', 'electron', 'sourcemap'] },
 
     // Webpack Config at ./webpack.test.js
     webpack: testWebpackConfig,
@@ -103,25 +104,12 @@ module.exports = function (config) {
       'Electron'
     ],
 
-    /* customLaunchers: {
-      ChromeTravisCi: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    }, */
-
     /*
      * Continuous Integration mode
      * if true, Karma captures browsers, runs the tests and exits
      */
     singleRun: true
   };
-
-  if (process.env.TRAVIS) {
-    configuration.browsers = [
-      'ChromeTravisCi'
-    ];
-  }
 
   config.set(configuration);
 };
