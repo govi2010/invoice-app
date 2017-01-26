@@ -4,7 +4,7 @@ language: node_js
 node_js:
   - "6"
   - "node"
-# Matrix failure enabled for https://github.com/TheLarkInn/LazyParseWebpackPlugin/issues/6
+# Matrix failure enabled for https://github.com/TheLarkInn/LazyParseWebpackPlugin/issues/6 
 matrix:
   fast_finish: true
 install:
