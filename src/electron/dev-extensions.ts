@@ -5,7 +5,7 @@ import { app } from 'electron';
 
 declare const ENV: string;
 
-if (ENV === 'development') {
+if (ENV === 'development' && !process.env.CI) {
   const installExtension = require('electron-devtools-installer').default;
 
   const extensions = [
