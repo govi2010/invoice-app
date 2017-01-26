@@ -4,7 +4,7 @@
 [![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/colinskow/angular-electron-dream-starter)
 
 <p align="center">
-  <img src="https://github.com/colinskow/angular2-webpack-starter/raw/electron/src/assets/img/angular-electron.svg" alt="Angular Electron Dream Starter" width="300" height="300"/>
+  <img src="https://rawgit.com/colinskow/angular2-webpack-starter/electron/src/assets/img/angular-electron.svg" alt="Angular Electron Dream Starter" width="300" height="300"/>
 </p>
 
 # Angular Electron Dream Starter with Webpack 2
