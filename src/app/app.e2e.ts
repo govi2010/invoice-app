@@ -19,7 +19,7 @@ describe('App', function() {
 
   it('should have a title', () => {
     let subject = browser.getTitle();
-    let result  = 'Angular2 Webpack Starter by @gdi2290 from @AngularClass';
+    let result  = 'Angular Electron Dream Starter by Colin Skow & @AngularClass';
     return expect(subject).to.eventually.equal(result);
   });
 

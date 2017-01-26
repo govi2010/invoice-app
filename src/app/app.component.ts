@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/take';
+import { shell } from 'electron';
 import { AppState } from './reducers';
 import { Store } from '@ngrx/store';
 import { HomeState } from './home/home.reducer';
@@ -49,7 +50,9 @@ import { HomeActions } from './home/home.actions';
     <pre class="app-state">this.state$ = {{ state$ | async | json }}</pre>
 
     <footer>
-      <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
+      <span>
+        Angular Electron Dream Starter by <a (click)="openURL(url)" href="#">@ColinSkow</a>
+      </span>
       <div>
         <a [href]="url">
           <img [src]="angularclassLogo" width="25%">
@@ -60,8 +63,8 @@ import { HomeActions } from './home/home.actions';
 })
 export class AppComponent implements OnInit {
   public angularclassLogo = 'assets/img/angular-electron.svg';
-  public name = 'Angular 2 Webpack Starter';
-  public url = 'https://twitter.com/AngularClass';
+  public name = 'Angular Electron Dream Starter';
+  public url = 'https://github.com/colinskow/angular-electron-dream-starter';
   public state$: Observable<HomeState>;
 
   constructor(
@@ -76,6 +79,10 @@ export class AppComponent implements OnInit {
       .subscribe(state => {
         console.log('Initial App State', state);
       });
+  }
+
+  public openURL(url) {
+    shell.openExternal(url);
   }
 
 }

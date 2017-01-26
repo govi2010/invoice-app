@@ -28,7 +28,7 @@ const SpecifyTsFilesPlugin = require('./specify-ts-files-plugin');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Angular Electron Dream Starter by Colin Skow & @AngularClass',
   baseUrl: '',
   isDevServer: helpers.isWebpackDevServer()
 };

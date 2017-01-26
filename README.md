@@ -1,12 +1,10 @@
-[![Build Status](https://travis-ci.org/AngularClass/angular2-webpack-starter.svg?branch=master)](https://travis-ci.org/AngularClass/angular2-webpack-starter)
-[![GitHub version](https://badge.fury.io/gh/angularclass%2Fangular2-webpack-starter.svg)](https://badge.fury.io/gh/angularclass%2Fangular2-webpack-starter)
-[![Dependency Status](https://david-dm.org/angularclass/angular2-webpack-starter.svg)](https://david-dm.org/angularclass/angular2-webpack-starter)
-[![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/angularclass/angular-2-webpack-starter)
+[![Build Status](https://travis-ci.org/colinskow/angular-electron-dream-starter.svg?branch=master)](https://travis-ci.org/colinskow/angular-electron-dream-starter)
+[![GitHub version](https://badge.fury.io/gh/colinskow%2Fangular-electron-dream-starter.svg)](https://badge.fury.io/gh/colinskow%2Fangular-electron-dream-starter)
+[![Dependency Status](https://david-dm.orgcolinskow/angular-electron-dream-starter.svg)](https://david-dm.org/colinskow/angular-electron-dream-starter)
+[![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/colinskow/angular-electron-dream-starter)
 
 <p align="center">
-  <a href="https://angularclass.com" target="_blank">
-    <img src="https://cloud.githubusercontent.com/assets/1016365/9863762/a84fed4a-5af7-11e5-9dde-d5da01e797e7.png" alt="Webpack and Angular 2" width="500" height="320"/>
-  </a>
+  <img src="https://github.com/colinskow/angular2-webpack-starter/raw/electron/src/assets/img/angular-electron.svg" alt="Angular Electron Dream Starter" width="300" height="300"/>
 </p>
 
 # Angular Electron Dream Starter with Webpack 2

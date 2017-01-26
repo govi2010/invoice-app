@@ -42,9 +42,9 @@ describe(`App`, () => {
   });
 
   it(`should be @AngularClass`, () => {
-    expect(comp.url).toEqual('https://twitter.com/AngularClass');
+    expect(comp.url).toEqual('https://github.com/colinskow/angular-electron-dream-starter');
     expect(comp.angularclassLogo).toEqual('assets/img/angular-electron.svg');
-    expect(comp.name).toEqual('Angular 2 Webpack Starter');
+    expect(comp.name).toEqual('Angular Electron Dream Starter');
   });
 
   it('should log ngOnInit', () => {
