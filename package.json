@@ -33,6 +33,7 @@
     "ci:travis": "npm run test && npm run build:dev && npm run e2e && npm run build:prod && npm run e2e && npm run build:aot && npm run e2e",
     "ci": "npm run ci:testall",
     "clean:aot": "rimraf compiled",
+    "clean:appdata": "electron config/clean-app-data",
     "clean:build": "rimraf dist dev compiled *.temp.json",
     "clean:dev": "rimraf dev",
     "clean:dist": "rimraf dist",
@@ -70,6 +71,7 @@
     "webpack": "webpack"
   },
   "dependencies": {
+    "electron-devtools-installer": "^2.0.1",
     "rxjs": "~5.0.3"
   },
   "devDependencies": {

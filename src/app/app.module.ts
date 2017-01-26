@@ -42,6 +42,8 @@ import { XLargeDirective } from './home/x-large';
 import '../styles/styles.scss';
 import '../styles/headings.css';
 
+declare const ENV: string;
+
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -59,6 +61,7 @@ type StoreType = {
 let CONDITIONAL_IMPORTS = [];
 
 if (ENV === 'development') {
+  console.log('loading react devtools');
   CONDITIONAL_IMPORTS.push(StoreDevtoolsModule.instrumentOnlyWithExtension());
 }
 

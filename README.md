@@ -23,6 +23,7 @@ I designed this seed repo to demonstrate an ideal development workflow and the m
 * Testing Angular 2 code inside Electron with Jasmine and Karma.
 * Coverage with Istanbul and Karma
 * End-to-end application testing with Spectron (using Mocha and Chai).
+* Bundled with Devtron and Redux DevTools extensions for debugging in development mode
 * Type manager with @types
 * Hot Module Replacement with Webpack and [@angularclass/hmr](https://github.com/angularclass/angular2-hmr) and [@angularclass/hmr-loader](https://github.com/angularclass/angular2-hmr-loader)
 * Angular 4 support via changing package.json and any future Angular versions
@@ -95,10 +96,12 @@ angular2-webpack-starter/
  │   │
  |   ├──polyfills.ts               * our polyfills file
  │   │
- │   ├──app/                       * WebApp: folder
+ │   ├──app/                       * WebApp folder (Angular / renderer process code)
  │   │   ├──app.component.spec.ts  * a simple test of components in app.component.ts
  │   │   ├──app.e2e.ts             * a simple end-to-end test for /
  │   │   └──app.component.ts       * a simple version of our App component components
+ │   │
+ │   ├──electron/                  * source code for the main Electron process
  │   │
  │   ├──resources/                 * icons and resources for Electron Builder
  │   │   ├──icon.icns              * Mac / Linux icon
@@ -203,6 +206,12 @@ This allows you to debug e2e tests and explore your app while it is running. See
 
 ```bash
 npm run e2e:live
+```
+
+### clean application data
+```bash
+# this will delete all data from localStorage, indexedDB etc.
+npm run clean:appdata
 ```
 
 # Configuration

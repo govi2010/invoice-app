@@ -6,6 +6,8 @@ import { routerReducer, RouterState } from '@ngrx/router-store';
 
 import * as fromHome from '../home/home.reducer';
 
+declare const ENV: string;
+
 export interface AppState {
   router: RouterState;
   home: fromHome.HomeState;
