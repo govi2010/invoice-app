@@ -7,26 +7,25 @@
 
 # Angular Electron Dream Starter with Webpack 2
 
-> A starter kit for [Electron](https://electron.atom.io) and [Angular 2](https://angular.io) featuring [Webpack 2](https://webpack.js.org), [AoT](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) compile, [NGRX Store](https://github.com/ngrx/store), Electron unit tests, native E2E tests in [Spectron](http://electron.atom.io/spectron/), and a powerful development workflow with [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) and [Electron Connect](https://github.com/Quramy/electron-connect).
+> A starter kit for [Electron](https://electron.atom.io) and [Angular 4](https://angular.io) featuring [Webpack 2](https://webpack.js.org), [AoT](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) compile, [NGRX Store](https://github.com/ngrx/store), Electron unit tests, native E2E tests in [Spectron](http://electron.atom.io/spectron/), and a powerful development workflow with [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) and [Electron Connect](https://github.com/Quramy/electron-connect).
 
 Forked from [AngularClass/angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter).
 
 I designed this seed repo to demonstrate an ideal development workflow and the most powerful tools for developing desktop applicaitons using Angular and Electron. `npm start` launches a powerful development workflow which uses Hot Module Replacement (HMR) for nearly instant updates inside the browser window, while also restarting your app automatically every time you update the code of the main process.
 
-* Best practices in desktop application development with Angular 2 and Electron.
+* Best practices in desktop application development with Angular and Electron.
 * Ready to go build system using Webpack 2 for working with TypeScript.
 * Automated bundling of app dependencies, including rebuilding native modules
 * Easily package your app for release on Mac, Linux or Windows and create installers
 * Ahead of Time (AoT) compile for rapid page loads of your production builds.
 * Tree shaking to automatically remove unused code from your production bundle.
 * [Webpack DLLs](https://robertknight.github.io/posts/webpack-dll-plugins/) dramatically speed your development builds.
-* Testing Angular 2 code inside Electron with Jasmine and Karma.
+* Testing Angular code inside Electron with Jasmine and Karma.
 * Coverage with Istanbul and Karma
 * End-to-end application testing with Spectron (using Mocha and Chai).
 * Bundled with Devtron and Redux DevTools extensions for debugging in development mode
 * Type manager with @types
 * Hot Module Replacement with Webpack and [@angularclass/hmr](https://github.com/angularclass/angular2-hmr) and [@angularclass/hmr-loader](https://github.com/angularclass/angular2-hmr-loader)
-* Angular 4 support via changing package.json and any future Angular versions
 
 ### Quick start
 **Make sure you have Node version >= 6.0 and NPM >= 3**
@@ -79,7 +78,7 @@ We use the component approach in our starter. This is the new standard for devel
 angular2-webpack-starter/
  ├──config/                        * our configuration
  |   ├──helpers.js                 * helper functions for our configuration files
- |   ├──spec-bundle.js             * ignore this magic that sets up our angular 2 testing environment
+ |   ├──spec-bundle.js             * ignore this magic that sets up our Angular testing environment
  |   ├──karma.conf.js              * karma config for our unit tests
  |   ├──webpack.electron.js        * webpack config for our Electron main process
  │   ├──webpack.dev.js             * our development webpack config
