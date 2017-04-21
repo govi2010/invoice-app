@@ -48,14 +48,8 @@ module.exports = function (options) {
        */
       extensions: ['.ts', '.js'],
 
-      /**
-       * Make sure root is src
-       */
-      /* modules: [
-        helpers.root('src'), 
-        // helpers.root('node_modules_electron','node_modules'),
-        helpers.root('node_modules')
-      ] */
+      // An array of directory names to be resolved to the current directory
+      modules: [helpers.root('src'), helpers.root('node_modules')],
 
     },
 
@@ -219,7 +213,7 @@ module.exports = function (options) {
        */
       new ContextReplacementPlugin(
         // The (\\|\/) piece accounts for path separators in *nix and Windows
-        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+        /angular(\\|\/)core(\\|\/)@angular/,
         helpers.root('src'), // location of your src
         {
           // your Angular Async Route paths relative to this root directory
