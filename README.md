@@ -338,7 +338,6 @@ import * as _ from 'lodash';
 
 
 # Frequently asked questions
-
 > See the [FAQ](https://github.com/AngularClass/angular2-webpack-starter#frequently-asked-questions) at `AngularClass/angular2-webpack-starter`.
 
 ___
