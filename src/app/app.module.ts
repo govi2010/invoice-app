@@ -48,15 +48,15 @@ declare const ENV: string;
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   HomeActions,
-  {provide: APP_BASE_HREF, useValue : '/' }
+  { provide: APP_BASE_HREF, useValue : '/' }
 ];
 
-type StoreType = {
-  state: InternalStateType,
-  rootState: InternalStateType,
-  restoreInputValues: () => void,
-  disposeOldHosts: () => void
-};
+interface StoreType {
+  state: InternalStateType;
+  rootState: InternalStateType;
+  restoreInputValues: () => void;
+  disposeOldHosts: () => void;
+}
 
 let CONDITIONAL_IMPORTS = [];
 

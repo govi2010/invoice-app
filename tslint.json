@@ -24,6 +24,7 @@
     "no-reference": false,
     "only-arrow-functions": false,
     "pipe-naming": [true, "camelCase", "my"],
+    "prefer-const": false,
     "templates-use-public": true,
     "use-host-property-decorator": true,
     "use-input-property-decorator": true,
@@ -42,7 +43,8 @@
       100
     ],
     "no-string-literal": false,
-    "no-use-before-declare": true,
+    // this rule generates a warning, will require some work to get working
+    // "no-use-before-declare": true,
     "no-var-requires": false,
     "object-literal-sort-keys": false,
     "ordered-imports": false,

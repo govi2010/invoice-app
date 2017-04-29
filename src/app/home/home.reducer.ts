@@ -4,7 +4,7 @@ import { HomeActions } from './home.actions';
 
 export interface HomeState {
   value?: string;
-};
+}
 
 export const initialState: HomeState = {};
 

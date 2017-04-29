@@ -72,24 +72,25 @@ interface GlobalEnvironment {
   System: SystemJS;
 }
 
-interface Es6PromiseLoader {
-  (id: string): (exportName?: string) => Promise<any>;
-}
+type Es6PromiseLoader = (id: string) => (exportName?: string) => Promise<any>;
 
 type FactoryEs6PromiseLoader = () => Es6PromiseLoader;
 type FactoryPromise = () => Promise<any>;
 
-type AsyncRoutes = {
+/* tslint:disable:ban-types */
+// @TODO replace 'Function' with signature for the function
+interface AsyncRoutes {
   [component: string]: Es6PromiseLoader |
                                Function |
                 FactoryEs6PromiseLoader |
-                         FactoryPromise
-};
+                         FactoryPromise;
+}
 
 type IdleCallbacks = Es6PromiseLoader |
                              Function |
               FactoryEs6PromiseLoader |
                        FactoryPromise ;
+/* tslint:enable:ban-types */
 
 interface WebpackModule {
   hot: {
@@ -123,8 +124,10 @@ interface ErrorStackTraceLimit {
 }
 
 // Extend typings
+/* tslint:disable:no-empty-interface */
 interface NodeRequire extends WebpackRequire {}
 interface ErrorConstructor extends ErrorStackTraceLimit {}
 interface NodeRequireFunction extends Es6PromiseLoader  {}
 interface NodeModule extends WebpackModule {}
 interface Global extends GlobalEnvironment  {}
+/* tslint:enable:no-empty-interface */
