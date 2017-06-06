@@ -31,7 +31,6 @@ import { rootReducer } from './reducers';
 import { AppComponent } from './app.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
-import { InternalStateType } from './app.service';
 import { AppState } from './reducers';
 import { HomeComponent } from './home';
 import { HomeActions } from './home/home.actions';
@@ -50,6 +49,10 @@ const APP_PROVIDERS = [
   HomeActions,
   { provide: APP_BASE_HREF, useValue : '/' }
 ];
+
+interface InternalStateType {
+  [key: string]: any;
+}
 
 interface StoreType {
   state: InternalStateType;
@@ -95,7 +98,6 @@ export class AppModule {
 
   constructor(
     public appRef: ApplicationRef,
-    // public appState: AppState,
     private _store: Store<AppState>
   ) {}
 

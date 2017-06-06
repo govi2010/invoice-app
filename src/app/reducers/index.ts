@@ -1,22 +1,17 @@
+/*
+ * Reducers: this file contains boilerplate code to handle debugging
+ * in development mode, as well as integrate the store with HMR.
+ * Customize your own reducers in `root.ts`.
+ */
 import { compose } from '@ngrx/core/compose';
 import { ActionReducer, combineReducers } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { storeLogger } from 'ngrx-store-logger';
-import { routerReducer, RouterState } from '@ngrx/router-store';
+import { reducers } from './root';
 
-import * as fromHome from '../home/home.reducer';
+export { reducers, AppState } from './root';
 
 declare const ENV: string;
-
-export interface AppState {
-  router: RouterState;
-  home: fromHome.HomeState;
-}
-
-export const reducers = {
-  router: routerReducer,
-  home: fromHome.homeReducer
-};
 
 // Generate a reducer to set the root state in dev mode for HMR
 function stateSetter(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -28,11 +23,7 @@ function stateSetter(reducer: ActionReducer<any>): ActionReducer<any> {
   };
 }
 
-const DEV_REDUCERS = [stateSetter, storeFreeze];
-// set in constants.js file of project root
-/* if (['logger', 'both'].indexOf(STORE_DEV_TOOLS) !== -1 ) {
-    DEV_REDUCERS.push(storeLogger());
-} */
+const DEV_REDUCERS = [stateSetter, storeFreeze, storeLogger()];
 
 const developmentReducer = compose(...DEV_REDUCERS, combineReducers)(reducers);
 const productionReducer = compose(combineReducers)(reducers);
