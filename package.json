@@ -1,7 +1,7 @@
 {
   "name": "angular-electron-dream-starter",
   "productName": "Angular Electron Dream Starter",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "description": "An Angular 2 Electron Starter kit featuring Webpack, Angular 2 (Router, Http, Forms, Services, ngrx, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, and TypeScript",
   "keywords": [
     "angular",
