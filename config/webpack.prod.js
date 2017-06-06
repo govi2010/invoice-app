@@ -13,7 +13,6 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const IgnorePlugin = require('webpack/lib/IgnorePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
-const NoEmitOnErrorsPlugin = require('webpack/lib/NoEmitOnErrorsPlugin');
 const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
@@ -125,15 +124,6 @@ module.exports = function (env) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
-
-      /**
-       * Use the NoEmitOnErrorsPlugin to skip the emitting phase whenever
-       * there are errors while compiling. This ensures that no assets are 
-       * emitted that include errors.
-       *
-       * See: https://webpack.js.org/plugins/no-emit-on-errors-plugin/
-       */
-      new NoEmitOnErrorsPlugin(),
 
       /**
        * Webpack plugin to optimize a JavaScript file for faster initial load
