@@ -20,7 +20,6 @@
       "node_modules/@types"
     ],
     "types": [
-      "electron",
       "hammerjs",
       "node",
       "source-map",
